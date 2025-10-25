@@ -1,5 +1,6 @@
 import { fetchPeople } from "./actions";
 import PeopleGrid from "./PeopleGrid";
+import MapView from "./MapView";
 
 export default async function PeopleSection() {
     const people = await fetchPeople();
@@ -15,7 +16,10 @@ export default async function PeopleSection() {
                 {(!Array.isArray(people) || people.length === 0) ? (
                     <div className="p-6 text-center text-gray-500">No se encontraron personas.</div>
                 ) : (
-                    <PeopleGrid people={people} />
+                    <>
+                        <PeopleGrid people={people} />
+                        <MapView people={people} />
+                    </>
                 )}
             </div>
         </section>
