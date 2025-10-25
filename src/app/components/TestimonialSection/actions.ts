@@ -1,11 +1,10 @@
-import axios from "axios";
 import { Testimonial } from "./types";
+import AxiosInstance from "@/api/AxiosInstance";
 
 export async function fetchTestimonials(): Promise<Testimonial[]> {
-    const apiUrl = process.env.NEXT_PUBLIC_URL_API;
-
+    
     try {
-        const response = await axios.get<Testimonial[]>(`${apiUrl}/post`);
+        const response = await AxiosInstance().get<Testimonial[]>(`/posts`);
         return response.data;
     } catch (error) {
         console.error('fetchTestimonials error:', error);
