@@ -14,17 +14,17 @@ export default function MapView({ people }: MapViewProps) {
     const map = useRef<maplibregl.Map | null>(null)
 
     useEffect(() => {
-        if (map.current || !mapContainer.current) return // Initialize map only once
+        if (map.current || !mapContainer.current) return // Initializa el mapa solo una vez
 
         // Crear el mapa
         map.current = new maplibregl.Map({
             container: mapContainer.current,
-            style: 'https://demotiles.maplibre.org/style.json', // Estilo gratuito de MapLibre
-            center: [0, 20], // Centro inicial [lng, lat]
+            style: 'https://demotiles.maplibre.org/style.json', 
+            center: [0, 20],
             zoom: 1.5
         })
 
-        // Agregar controles de navegación
+        // Agrega controles de navegación
         map.current.addControl(new maplibregl.NavigationControl(), 'top-right')
 
         // Agregar marcadores para cada persona
@@ -32,7 +32,7 @@ export default function MapView({ people }: MapViewProps) {
             const lat = parseFloat(person.address.geo.lat)
             const lng = parseFloat(person.address.geo.lng)
 
-            // Validar coordenadas
+            // Valida que las coordenadas sean números válidos
             if (isNaN(lat) || isNaN(lng)) return
 
             // Crear elemento de marcador personalizado con forma de chincheta
