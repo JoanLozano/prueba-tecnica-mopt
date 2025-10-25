@@ -1,4 +1,4 @@
-'use client'
+"use client"
 
 import { Person } from './types'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -6,10 +6,7 @@ import { faAt, faEnvelope } from '@fortawesome/free-solid-svg-icons'
 
 export default function CardPeople({ person }: { person: Person }) {
     return (
-        <article
-            key={person.id}
-            className="bg-white dark:bg-gray-800 shadow-sm rounded-lg p-4 flex flex-col justify-between w-full"
-        >
+        <article className="bg-white dark:bg-gray-800 shadow-sm rounded-lg p-4 flex flex-col justify-between w-full will-change-transform transform transition-transform duration-200 hover:scale-105">
             <div className="flex items-center gap-4 mb-4">
                 <div className="h-12 w-12 rounded-full bg-red-600 text-white flex items-center justify-center font-semibold">
                     {(person.name ?? '')

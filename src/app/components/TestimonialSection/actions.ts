@@ -5,10 +5,10 @@ export async function fetchTestimonials(): Promise<Testimonial[]> {
     const apiUrl = process.env.NEXT_PUBLIC_URL_API;
 
     try {
-        const response = await axios.get<Testimonial[]>(`${apiUrl}/posts`);
-        console.log(response.data);
+        const response = await axios.get<Testimonial[]>(`${apiUrl}/post`);
         return response.data;
     } catch (error) {
-        return error as any;
+        console.error('fetchTestimonials error:', error);
+        return [] as Testimonial[];
     }
 }

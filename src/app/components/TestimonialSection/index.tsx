@@ -4,9 +4,6 @@ import SliderCards from "./SliderCards";
 export default async function TestimonialSection() {
 
     const testimonials = await fetchTestimonials();
-    if (!testimonials || testimonials.length === 0) {
-        return <div className="p-6 text-center text-gray-500">No se encontraron testimonios.</div>;
-    }
 
 
     return (
@@ -16,7 +13,11 @@ export default async function TestimonialSection() {
                     <h2 className="text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl dark:text-white">
                         Testimonios
                     </h2>
-                    <SliderCards testimonials={testimonials} /> 
+                    {!testimonials || testimonials.length === 0 ? (
+                        <div className="p-6 text-center text-gray-500">No se encontraron testimonios.</div>
+                    ) : (
+                        <SliderCards testimonials={testimonials} />
+                    )}
                 </div>
             </div>
         </section>
