@@ -1,4 +1,3 @@
-
 import HeroSection from "./components/HeroSection";
 import PeopleSection from "./components/PeopleSection";
 import TestimonialSection from "./components/TestimonialSection";

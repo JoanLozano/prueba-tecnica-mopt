@@ -6,7 +6,7 @@ export async function fetchPeople(): Promise<People> {
 
     try {
         const response = await axios.get<People>(`${apiUrl}/users`);
-        console.log(response.data);
+        // console.log(response.data);
         return response.data;
     } catch (error) {
         return error as any;

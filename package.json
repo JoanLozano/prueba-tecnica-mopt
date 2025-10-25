@@ -15,7 +15,10 @@
     "@fortawesome/free-regular-svg-icons": "^6.6.0",
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "@fortawesome/react-fontawesome": "^0.2.2",
+    "@headlessui/react": "^2.2.6",
     "axios": "^1.12.2",
+    "clsx": "^2.1.1",
+    "keen-slider": "^6.8.6",
     "next": "16.0.0",
     "react": "19.2.0",
     "react-dom": "19.2.0"
