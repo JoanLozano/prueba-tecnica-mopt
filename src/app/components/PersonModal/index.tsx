@@ -23,7 +23,7 @@ export default function PersonModal({ person, isOpen, onClose }: PersonModalProp
 
     return (
         <div 
-            className="fixed inset-0 z-[70] flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate__animated animate__fadeIn animate__faster"
+            className="fixed inset-0 z-70 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate__animated animate__fadeIn animate__faster"
             onClick={onClose}
         >
             <div 
