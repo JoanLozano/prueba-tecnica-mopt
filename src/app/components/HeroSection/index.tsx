@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function HeroSection() {
     return (
-        <header className="relative w-full h-[50vh] lg:h-[60vh] flex items-center justify-center text-center">
+        <header id="hero" className="relative w-full h-[50vh] lg:h-[60vh] flex items-center justify-center text-center">
             {/* Imagen de fondo */}
             <Image
                 loading="eager"

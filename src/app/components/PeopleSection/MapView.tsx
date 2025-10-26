@@ -64,7 +64,7 @@ export default function MapView({ people }: MapViewProps) {
                 className: 'custom-popup'
             }).setHTML(`
                 <div style="
-                    background: white;
+                    background: var(--background);
                     border-radius: 8px;
                     padding: 16px;
                     min-width: 250px;
@@ -89,7 +89,7 @@ export default function MapView({ people }: MapViewProps) {
                                 margin: 0;
                                 font-size: 18px;
                                 font-weight: 500;
-                                color: #111827;
+                                color: var(--foreground);
                                 white-space: nowrap;
                                 overflow: hidden;
                                 text-overflow: ellipsis;
@@ -97,18 +97,20 @@ export default function MapView({ people }: MapViewProps) {
                             <p style="
                                 margin: 2px 0 0 0;
                                 font-size: 14px;
-                                color: #6b7280;
+                                color: var(--foreground);
+                                opacity: 0.7;
                                 display: flex;
                                 align-items: center;
                                 gap: 4px;
                             ">
-                                <span style="color: #6b7280;">@</span>${person.username}
+                                <span style="opacity: 0.7;">@</span>${person.username}
                             </p>
                         </div>
                     </div>
                     <div style="
                         font-size: 14px;
-                        color: #374151;
+                        color: var(--foreground);
+                        opacity: 0.85;
                         line-height: 1.5;
                     ">
                         <p style="
@@ -132,7 +134,8 @@ export default function MapView({ people }: MapViewProps) {
                         <p style="
                             margin: 0;
                             font-size: 12px;
-                            color: #6b7280;
+                            color: var(--foreground);
+                            opacity: 0.6;
                         ">${person.address.city}, ${person.address.street}</p>
                     </div>
                 </div>
@@ -172,7 +175,7 @@ export default function MapView({ people }: MapViewProps) {
             </h3>
             <div 
                 ref={mapContainer} 
-                className="w-full h-[500px] rounded-lg shadow-lg border border-gray-200 dark:border-gray-700"
+                className="w-full h-[300px] sm:h-[400px] lg:h-[500px] rounded-lg shadow-lg border border-gray-200 dark:border-gray-700"
             />
             <style jsx global>{`
                 .maplibregl-popup-content {
