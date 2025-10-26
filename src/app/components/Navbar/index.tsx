@@ -18,12 +18,12 @@ export default function Navbar() {
 
   // Detectar modo del sistema y aplicar tema guardado
   useEffect(() => {
-    const mq = window.matchMedia("(prefers-color-scheme: dark)")
-    const updateSystem = () => setSystemDark(mq.matches)
+    const preferredColor = window.matchMedia("(prefers-color-scheme: dark)")
+    const updateSystem = () => setSystemDark(preferredColor.matches)
     updateSystem()
 
-    mq.addEventListener("change", updateSystem)
-    return () => mq.removeEventListener("change", updateSystem)
+    preferredColor.addEventListener("change", updateSystem)
+    return () => preferredColor.removeEventListener("change", updateSystem)
   }, [])
 
   const scrollToSection = (id: string) => {
@@ -63,7 +63,7 @@ export default function Navbar() {
               onClick={() => scrollToSection("hero")}
               className="flex items-center space-x-2 group"
             >
-              <div className="h-10 w-10 rounded-full bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
+              <div className="h-10 w-10 rounded-full bg-linear-to-br from-blue-600 to-indigo-600 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
                 <span className="text-white font-bold text-lg">M</span>
               </div>
               <span

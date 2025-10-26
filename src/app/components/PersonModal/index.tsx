@@ -126,7 +126,7 @@ export default function PersonModal({ person, isOpen, onClose }: PersonModalProp
                                     {person.company.name}
                                 </p>
                                 <p className="text-xs text-gray-600 dark:text-gray-300 italic mt-1">
-                                    "{person.company.catchPhrase}"
+                                    &ldquo;{person.company.catchPhrase}&rdquo;
                                 </p>
                                 <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
                                     {person.company.bs}

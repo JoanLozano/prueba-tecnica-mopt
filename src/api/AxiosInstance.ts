@@ -11,7 +11,6 @@ const AxiosInstance = (): Instance => {
         timeout: 10000,
     });
 
-    // Add a request interceptor to add the token to the request headers (only on client)
     instance.interceptors.request.use((config) => {
         let token: string | null = null
         if (typeof window !== 'undefined' && window.sessionStorage) {
@@ -36,14 +35,10 @@ const AxiosInstance = (): Instance => {
                     try {
                         window.sessionStorage.clear();
                         window.localStorage.clear();
-                        // avoid throwing in environments without alert
                         if (typeof window.alert === 'function') {
                             window.alert('Session expired. Please log in again.');
                         }
                     } catch (e) {
-                        // swallow errors when running in restricted environments
-                        // (e.g. server-side rendering or automated tests)
-                        // eslint-disable-next-line no-console
                         console.warn('Could not clear storage or show alert:', e);
                     }
                 }

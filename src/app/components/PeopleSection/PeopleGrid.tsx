@@ -14,7 +14,6 @@ interface PeopleGridProps {
 }
 
 export default function PeopleGrid({ people, onViewDetails }: PeopleGridProps) {
-    const [displayCount, setDisplayCount] = useState(people.length);
     const [isMobile, setIsMobile] = useState(false);
     const [expanded, setExpanded] = useState<boolean>(() => peopleExpandedInMemory);
     const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc');
@@ -33,23 +32,16 @@ export default function PeopleGrid({ people, onViewDetails }: PeopleGridProps) {
         const checkIfMobile = () => {
             const mobile = window.innerWidth < 640;
             setIsMobile(mobile);
-            if (!expanded) {
-                setDisplayCount(mobile ? 4 : sortedPeople.length);
-            } else {
-                setDisplayCount(sortedPeople.length);
-            }
         };
 
         checkIfMobile();
         window.addEventListener('resize', checkIfMobile);
         return () => window.removeEventListener('resize', checkIfMobile);
-    }, [sortedPeople.length, expanded]);
+    }, []);
 
-    useEffect(() => {
-        if (expanded) {
-            setDisplayCount(sortedPeople.length);
-        }
-    }, [sortedPeople.length, expanded]);
+    const displayCount = useMemo(() => {
+        return expanded ? sortedPeople.length : (isMobile ? 4 : sortedPeople.length);
+    }, [expanded, isMobile, sortedPeople.length]);
 
     const displayedPeople = sortedPeople.slice(0, displayCount);
     const hasMoreToShow = displayCount < sortedPeople.length;
@@ -101,7 +93,6 @@ export default function PeopleGrid({ people, onViewDetails }: PeopleGridProps) {
                         onClick={() => {
                             setExpanded(true);
                             peopleExpandedInMemory = true;
-                            setDisplayCount(sortedPeople.length);
                         }}
                         className="rounded-md bg-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 transition-colors"
                     >
