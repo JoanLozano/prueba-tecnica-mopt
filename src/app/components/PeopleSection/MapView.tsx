@@ -87,7 +87,7 @@ export default function MapView({ people }: MapViewProps) {
                         <div style="flex: 1; min-width: 0;">
                             <h3 style="
                                 margin: 0;
-                                font-size: 16px;
+                                font-size: 18px;
                                 font-weight: 500;
                                 color: #111827;
                                 white-space: nowrap;
@@ -96,7 +96,7 @@ export default function MapView({ people }: MapViewProps) {
                             ">${person.name}</h3>
                             <p style="
                                 margin: 2px 0 0 0;
-                                font-size: 13px;
+                                font-size: 14px;
                                 color: #6b7280;
                                 display: flex;
                                 align-items: center;
@@ -107,7 +107,7 @@ export default function MapView({ people }: MapViewProps) {
                         </div>
                     </div>
                     <div style="
-                        font-size: 13px;
+                        font-size: 14px;
                         color: #374151;
                         line-height: 1.5;
                     ">

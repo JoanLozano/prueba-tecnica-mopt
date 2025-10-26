@@ -10,12 +10,12 @@ export default function CardTestimonial({ testimonial }: { testimonial: Testimon
             <div className="absolute inset-y-0 left-1/2 -z-10 -translate-x-1/2 w-[120%] origin-bottom-left skew-x-[-30deg] bg-white shadow-xl ring-1 shadow-indigo-600/10 ring-indigo-50 dark:bg-gray-900 dark:shadow-indigo-500/5 dark:ring-white/5 pointer-events-none" />
             <div className="mx-auto max-w-2xl lg:max-w-4xl">
                 <figure className="">
-                    <blockquote className="text-center text-xl/8 font-semibold text-gray-900 sm:text-2xl/9 dark:text-white">
+                    <blockquote className="text-center text-lg font-semibold text-gray-900 sm:text-2xl dark:text-white">
                         <p>
                             {testimonial.title}
                         </p>
                     </blockquote>
-                    <blockquote className="text-center text-md font-semibold text-gray-900 mt-5 dark:text-white">
+                    <blockquote className="text-center text-base font-semibold text-gray-900 mt-5 dark:text-white">
                         <p>
                             {testimonial.body}
                         </p>

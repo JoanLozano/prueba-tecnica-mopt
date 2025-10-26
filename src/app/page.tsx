@@ -1,3 +1,4 @@
+import FooterSection from "./components/FooterSection";
 import HeroSection from "./components/HeroSection";
 import PeopleSection from "./components/PeopleSection";
 import TestimonialSection from "./components/TestimonialSection";
@@ -8,6 +9,7 @@ export default function Home() {
       <HeroSection />
       <PeopleSection />
       <TestimonialSection />
+      <FooterSection />
     </main>
   );
 }
