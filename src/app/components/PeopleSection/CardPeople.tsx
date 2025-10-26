@@ -48,13 +48,6 @@ export default function CardPeople({ person, onViewDetails }: CardPeopleProps) {
                     </a>
                 </p>
             </div>
-{/* 
-            <div className="mt-4 text-xs text-gray-500 dark:text-gray-400 border-t pt-3 border-gray-200 dark:border-gray-700">
-                <p className="truncate">📍 {person.address.city}</p>
-                <p className="mt-1 text-blue-600 dark:text-blue-400 font-medium">
-                    Click para ver más detalles
-                </p>
-            </div> */}
         </article>
     )
 }
